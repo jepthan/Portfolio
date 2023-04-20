@@ -1,40 +1,57 @@
+import { useRef, useState } from 'react'
 import './App.css'
 import { Canvas, useFrame } from '@react-three/fiber'
+import About from './About'
+import Contact from './Contact'
+import Navbar from './Navbar'
 
-function Navbar() {
-
+function Box(props) {
+  // This reference gives us direct access to the THREE.Mesh object
+  const ref = useRef()
+  // Hold state for hovered and clicked events
+  const [hovered, hover] = useState(false)
+  const [clicked, click] = useState(false)
+  // Subscribe this component to the render-loop, rotate the mesh every frame
+  useFrame((state, delta) => (ref.current.rotation.x += delta))
+  useFrame((state, delta) => (ref.current.rotation.y += delta))
+  // Return the view, these are regular Threejs elements expressed in JSX
   return (
-    <nav>
-      <ul>
-        <li>1 element</li>
-        <li>2 element</li>
-        <li>3 element</li>
-      </ul>
-    </nav>
+    <mesh
+      {...props}
+      ref={ref}
+      scale={clicked ? 1.5 : 1}
+      onClick={(event) => click(!clicked)}
+      onPointerOver={(event) => hover(true)}
+      onPointerOut={(event) => hover(false)}>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+    </mesh>
   )
 }
+
 
 export default function App() {
 
   const ref = useRef()
-  useFrame((state, delta) => (ref.current.rotation.x += delta))
 
   return (
-    <div className="App">
+    <div className="m-0 bg-slate-700">
       <Navbar />
-      <h1 className='text-3xl font-bold underline'>
-        Hello word
-      </h1>
-
-      <Canvas>
+      
+      <img src='/placeholder.gif'></img>
+      {
+        /*
+        <Canvas>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <mesh
-          ref={ref}>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color={'orange'} />
-        </mesh>
-      </Canvas>
+        <Box position= {[0,0,3]}/>
+      </Canvas>*/
+      }
+      
+
+      <About />
+      <Contact />
+      
     </div>
   )
 }
