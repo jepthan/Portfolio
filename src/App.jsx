@@ -35,7 +35,7 @@ export default function App() {
   const ref = useRef()
 
   return (
-    <div className="m-0 bg-slate-700">
+    <div name="home" className="m-0 bg-slate-700">
       <Navbar />
       
       <img src='/placeholder.gif'></img>

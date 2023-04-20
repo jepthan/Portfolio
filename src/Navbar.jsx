@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 
 
 
@@ -11,10 +12,10 @@ export default function Navbar() {
             <div className="text-lg text-black mb-auto mt-auto pl-2">JPH dev</div>
         </div>
         <ul className="flex mt-auto mb-auto">
-          <li className="text-lg text-black px-6">1 element</li>
-          <li className="text-lg text-black px-6">2 element</li>
-          <li className="text-lg text-black px-6">3 element</li>
-          <li className="text-lg text-black px-6">4 element</li>
+          <Link offset={-85} duration={400} smooth to="home" className="text-lg text-black px-6">Home</Link>
+          <Link offset={-85} duration={400} smooth to="about" className="text-lg text-black px-6 active:bg-red-800">About</Link>
+          <Link offset={-85} duration={400} smooth to="contacts" className="text-lg text-black px-6">Contact</Link>
+          
         </ul>
       </nav>
     )

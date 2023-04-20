@@ -3,7 +3,7 @@ export default function Contact() {
 
     return (
         <>
-        <h1>Contacts</h1>
+        <h1 name="contacts" >Contacts</h1>
             <div className='w-screen h-screen'>
                 Erat eos erat exerci dolor sed sea dolore clita esse nisl amet vel.
                 Lorem et labore aliquyam invidunt esse diam erat justo nulla ea justo sed gubergren.
