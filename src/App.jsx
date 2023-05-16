@@ -3,7 +3,7 @@ import './App.css'
 import { Canvas, useFrame } from '@react-three/fiber'
 import About from './About'
 import Contact from './Contact'
-import Navbar from './Navbar'
+import Navbar from './Components/Navbar'
 
 function Box(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -32,27 +32,25 @@ function Box(props) {
 
 export default function App() {
 
-  const ref = useRef()
-
   return (
-    <div name="home" className="m-0 bg-slate-700">
+    <>
       <Navbar />
-      
-      <img src='/placeholder.gif'></img>
-      {
-        /*
-        <Canvas>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        <Box position= {[0,0,3]}/>
-      </Canvas>*/
-      }
+      <div name="home">
+        <img src='/placeholder.gif'></img>
+      </div>
+
+
+      <div name="about">
+        <About />
+      </div>
       
 
-      <About />
-      <Contact />
-      
-    </div>
+      <div name="contacts">
+        <Contact />
+      </div>
+
+
+    </>
   )
 }
 

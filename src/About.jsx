@@ -5,7 +5,7 @@ export default function About() {
     return (
         <>
         <h1 >About</h1>
-            <div name="about" className='w-screen h-screen'>
+            <div className='w-screen h-screen'>
                 Erat eos erat exerci dolor sed sea dolore clita esse nisl amet vel.
                 Lorem et labore aliquyam invidunt esse diam erat justo nulla ea justo sed gubergren.
                 Nonumy molestie et te diam sed ipsum et et adipiscing duis diam. Stet ipsum justo amet
