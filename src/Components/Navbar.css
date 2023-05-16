@@ -7,5 +7,5 @@
 }
 
 .NavItem .active    {
-    @apply text-green-400 rounded-md;
+    @apply text-Blue rounded-md;
 }

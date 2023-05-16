@@ -36,7 +36,7 @@ export default function App() {
     <>
       <Navbar />
       <div name="home">
-        <img src='/placeholder.gif'></img>
+        
       </div>
 
 
