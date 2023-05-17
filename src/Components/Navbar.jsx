@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav className='w-full flex h-16 sticky top-0  z-40 align-middle backdrop-blur-lg  bg-zinc-800/60 shadow-lg'>
       <div className="mt-auto mb-auto flex grow">
-        <img src="/icono.svg" className="px-4 invert"></img>
+        <img src="/logo.png" className="p-1 w-16 h-16"></img>
         <div className="text-lg text-white mb-auto mt-auto pl-2">JPH dev</div>
       </div>
       <ul className="hidden md:flex mt-auto mb-auto">

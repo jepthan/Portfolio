@@ -35,8 +35,7 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div name="home">
-        
+      <div name="home" className='h-screen'>
       </div>
 
 
