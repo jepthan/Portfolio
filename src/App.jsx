@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react'
 import './App.css'
 import { Canvas, useFrame } from '@react-three/fiber'
-import About from './About'
-import Contact from './Contact'
+import About from './Components/About'
+import Contact from './Components/Contact'
 import Navbar from './Components/Navbar'
+import Home from './Components/Home'
 
 function Box(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -35,8 +36,8 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <div name="home" className='h-screen'>
-      </div>
+
+      <Home/>
 
 
       <div name="about">
