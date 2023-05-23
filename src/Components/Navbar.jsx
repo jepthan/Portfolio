@@ -2,6 +2,7 @@ import { Link } from "react-scroll";
 import "./Navbar.css"
 
 
+
 export default function Navbar() {
 
   return (
@@ -11,17 +12,23 @@ export default function Navbar() {
         <div className="text-lg text-white mb-auto mt-auto pl-2">JPH dev</div>
       </div>
       <ul className="hidden md:flex mt-auto mb-auto">
-        <li className="NavItem">
-          <Link spy={true} offset={-85} duration={400} smooth={true} to="home" >Home</Link>
-        </li>
+        <NavItem itemname={"Home"}/>
         <li className="NavItem">
           <Link spy={true} offset={-85} duration={400} smooth={true} to="about" >About</Link>
         </li>
-        <li className="NavItem">
-          <Link spy={true} offset={-85} duration={400} smooth={true} to="contacts">Contact</Link>
-        </li>
+        <NavItem itemname={"Contact"}/>
 
       </ul>
     </nav>
+  )
+}
+
+function NavItem({itemname}){
+  return(
+    <>
+    <li className="NavItem">
+          <Link spy={true} offset={-85} duration={400} smooth={true} to={itemname} >{itemname}</Link>
+    </li>
+    </>
   )
 }

@@ -1,10 +1,10 @@
-export default function Contact() {
+export default function Contact(props) {
 
 
     return (
         <>
         <h1 >Contacts</h1>
-            <div className='w-screen h-screen'>
+            <div className='w-screen h-screen' name={props.name}>
                 Erat eos erat exerci dolor sed sea dolore clita esse nisl amet vel.
                 Lorem et labore aliquyam invidunt esse diam erat justo nulla ea justo sed gubergren.
                 Nonumy molestie et te diam sed ipsum et et adipiscing duis diam. Stet ipsum justo amet

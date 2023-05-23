@@ -37,17 +37,19 @@ export default function App() {
     <>
       <Navbar />
 
-      <Home/>
+      <Home name="Home"/>
 
-
-      <div name="about">
-        <About />
-      </div>
       
 
-      <div name="contacts">
-        <Contact />
-      </div>
+
+     
+        <About name="About"/>
+    
+      
+
+      
+        <Contact name="Contact"/>
+
 
 
     </>
