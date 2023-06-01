@@ -2,9 +2,9 @@ export default function Contact(props) {
 
 
     return (
-        <>
-        <h1 >Contacts</h1>
-            <div className='w-screen h-screen' name={props.name}>
+        <div className='w-screen h-screen text-white' name={props.name}>
+            <h1 >Contacts</h1>
+            <div >
                 Erat eos erat exerci dolor sed sea dolore clita esse nisl amet vel.
                 Lorem et labore aliquyam invidunt esse diam erat justo nulla ea justo sed gubergren.
                 Nonumy molestie et te diam sed ipsum et et adipiscing duis diam. Stet ipsum justo amet
@@ -29,6 +29,6 @@ export default function Contact(props) {
                 sea sit gubergren rebum consetetur sanctus ipsum diam ut feugait velit sed. Sit
                 kasd amet et duo justo sanctus commodo amet wisi eu takimata et vel sadipscing sed ut et.
             </div>
-        </>
+        </div>
     )
 }

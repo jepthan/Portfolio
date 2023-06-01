@@ -3,11 +3,11 @@ import { useRef } from "react"
 export default function Home(props) {
 
     function changegrowin(e){
-        console.log("AAAAAAAAAAAAA")
+        //console.log("AAAAAAAAAAAAA")
         e.target.style.flexGrow = "5"; 
     }
     function changegrowout(e){
-        console.log("AAAAAAAAAAAAA")
+        //console.log("AAAAAAAAAAAAA")
         e.target.style.flexGrow = "1"; 
     }
 

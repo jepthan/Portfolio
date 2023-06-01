@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-.NavItem{
+.NavItem {
     @apply text-lg text-white px-6 font-bold;
 }
 
-.NavItem .active    {
+.NavItem .active {
     @apply text-Blue rounded-md;
+}
+
+.colored {
+    background-color: white;
+    /* defines the background color of the image */
+    mask: url("/menu_icon.svg") no-repeat center / contain;
+    -webkit-mask: url("/menu_icon.svg") no-repeat center / contain;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
 }
