@@ -20,12 +20,10 @@ export default function Navbar() {
   const menuref = useRef()
 
   function handleClickOutside(event){
-    console.log("aaa")
     if (menuref.current && !menuref.current.contains(event.target)) {
       if(isOpenReff.current == true){
         document.removeEventListener("click", handleClickOutside);
       }
-      console.log(`new fun ${isOpenReff.current}`)
       setIsOpenState(!isOpenReff.current)
     }
   }
@@ -60,7 +58,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <ul ref={menuref} className={`absolute top-16 backdrop-blur-lg  bg-zinc-800/60 shadow-lg w-3/5 right-0 ${isOpen ? "block" : "hidden"}`}>
+      <ul ref={menuref} className={`absolute top-16 backdrop-blur-lg  bg-zinc-800/60 shadow-lg w-3/5 right-0 ${isOpen ? "block" : "hidden"} md:hidden `}>
         <NavItem itemname={"Home"} offset={-65} />
         <NavItem itemname={"About"} offset={-63} />
         <NavItem itemname={"Contact"} offset={-63} />

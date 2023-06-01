@@ -8,11 +8,11 @@ export default {
     colors:{
       transparent: 'transparent',
       current: 'currentColor',
-      Blue: '#a6c9eb',
+      Blue: '#519ee8',
       white: '#ffffff',
       black: '#000000',
       red: '#e53138',
-      green: '',
+      green: '#004225',
       grey_Dark: '',
       grey_light: '',
     },
