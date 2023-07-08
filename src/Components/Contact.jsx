@@ -1,9 +1,10 @@
+import { useTranslation } from "react-i18next"
 export default function Contact(props) {
 
-
+    const {t} = useTranslation()
     return (
         <div className='w-screen h-screen text-white' name={props.name}>
-            <h1 >Contacts</h1>
+            <h1 >{t('top_bar_title')}</h1>
             <div >
                 Erat eos erat exerci dolor sed sea dolore clita esse nisl amet vel.
                 Lorem et labore aliquyam invidunt esse diam erat justo nulla ea justo sed gubergren.

@@ -5,6 +5,10 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
+import './i18n'
+import React, { Suspense } from 'react';
+import i18n from './i18n'
+import i18next from 'i18next'
 
 function Box(props) {
   // This reference gives us direct access to the THREE.Mesh object
@@ -32,26 +36,29 @@ function Box(props) {
 
 
 export default function App() {
-
+  
   return (
     <>
-      <Navbar />
+      <Suspense fallback={null}>
+        <button onClick={() => i18next.changeLanguage('es')}>Español</button>
+        <button onClick={() => i18next.changeLanguage('en')}>ingles</button>
+        <Navbar />
 
-      <Home name="Home" />
-
-
-
-
-
-      <About name="About" />
+        <Home name="Home" />
 
 
 
 
-      <Contact name="Contact" />
+
+        <About name="About" />
 
 
 
+
+        <Contact name="Contact" />
+
+
+      </Suspense>
     </>
   )
 }
