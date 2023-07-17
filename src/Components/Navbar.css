@@ -10,11 +10,18 @@
     @apply text-Blue rounded-md;
 }
 
-.colored {
+.MenuBtn {
     background-color: white;
     /* defines the background color of the image */
     mask: url("/menu_icon.svg") no-repeat center / contain;
     -webkit-mask: url("/menu_icon.svg") no-repeat center / contain;
+}
+
+.TranslateBtn {
+    background-color: white;
+    mask: url("/translate_icon.svg") no-repeat center / contain;
+    -webkit-mask: url("/translate_icon.svg") no-repeat center / contain;
+    mask-size: 30px;
 }
 
 .icon {

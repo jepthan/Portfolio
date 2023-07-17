@@ -54,11 +54,16 @@ export default function Navbar() {
         <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />
       </ul>
 
+      <div className="flex mt-auto mb-auto" onClick={isOpenfun}>
+        <div className="TranslateBtn icon"></div>
+      </div>
+
       <div className="flex mt-auto mb-auto md:hidden" onClick={isOpenfun}>
-        <div className="colored icon">
+        <div className="MenuBtn icon">
 
         </div>
       </div>
+
 
       <ul ref={menuref} className={`absolute top-16 backdrop-blur-lg  bg-zinc-800/60 shadow-lg w-3/5 right-0 ${isOpen ? "block" : "hidden"} md:hidden `}>
         <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
