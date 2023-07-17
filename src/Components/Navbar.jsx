@@ -1,5 +1,6 @@
 import { Link } from "react-scroll";
 import "./Navbar.css"
+import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react";
 
 
@@ -37,6 +38,7 @@ export default function Navbar() {
 
   }
 
+  const {t} = useTranslation()
   
 
 
@@ -47,9 +49,9 @@ export default function Navbar() {
         <div className="text-lg text-white mb-auto mt-auto pl-2">JPH dev</div>
       </div>
       <ul className="hidden md:flex mt-auto mb-auto">
-        <NavItem itemname={"Home"} offset={-65} />
-        <NavItem itemname={"About"} offset={-65} />
-        <NavItem itemname={"Contact"} offset={-63} />
+        <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
+        <NavItem itemname={"About"} itemtext= {t('nav_about')} offset={-65} />
+        <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />
       </ul>
 
       <div className="flex mt-auto mb-auto md:hidden" onClick={isOpenfun}>
@@ -59,20 +61,20 @@ export default function Navbar() {
       </div>
 
       <ul ref={menuref} className={`absolute top-16 backdrop-blur-lg  bg-zinc-800/60 shadow-lg w-3/5 right-0 ${isOpen ? "block" : "hidden"} md:hidden `}>
-        <NavItem itemname={"Home"} offset={-65} />
-        <NavItem itemname={"About"} offset={-63} />
-        <NavItem itemname={"Contact"} offset={-63} />
+        <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
+        <NavItem itemname={"About"} itemtext= {t('nav_about')} offset={-63} />
+        <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />
       </ul>
     </nav>
 
   )
 }
 
-function NavItem({ itemname, offset }) {
+function NavItem({ itemname, offset, itemtext }) {
   return (
     <>
       <li className="NavItem">
-        <Link spy={true} offset={offset} duration={400} smooth={true} to={itemname} >{itemname}</Link>
+        <Link spy={true} offset={offset} duration={400} smooth={true} to={itemname} >{itemtext}</Link>
       </li>
     </>
   )

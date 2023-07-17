@@ -1,3 +1,10 @@
 {
-    "top_bar_title": "Panel de administrador de comunidad"
+    "top_bar_title": "Panel de administrador de comunidad",
+    "nav_home":"Inicio",
+    "nav_about": "Acerca de",
+    "nav_contact": "Contacto",
+    "home_title": "Hello! I'm Jefte",
+    "home_text": "I invite you to explore my portfolio, where you'll find examples of my work and professional journey. If you're looking for a passionate developer to bring your ideas to life, let's connect and create something extraordinary!",
+    "about_header": "About Me",
+    "about_body": "Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology "
 }

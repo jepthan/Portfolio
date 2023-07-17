@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { useTranslation } from "react-i18next"
 
 export default function Home(props) {
 
@@ -10,7 +11,7 @@ export default function Home(props) {
         //console.log("AAAAAAAAAAAAA")
         e.target.style.flexGrow = "1"; 
     }
-
+    const {t} = useTranslation()
     
     return (
         <div className="flex h-screen" name={props.name}>

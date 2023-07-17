@@ -1,3 +1,6 @@
 {
-    "top_bar_title": "Community Admin Panel"
+    "top_bar_title": "Community Admin Panel",
+    "nav_home":"Home",
+    "nav_about": "About",
+    "nav_contact": "Contact"
 }
