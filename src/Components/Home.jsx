@@ -14,11 +14,11 @@ export default function Home(props) {
     const {t} = useTranslation()
     
     return (
-        <div className="flex h-screen" name={props.name}>
-            <div className="flex-grow hover:bg-red transition-all" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
+        <div className="flex h-96" name={props.name}>
+            <div className="flex-grow hover:bg-primary transition-all" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
                 
             </div>
-            <div className="flex-grow  hover:bg-red transition-all duration-1000" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
+            <div className="flex-grow  hover:bg-primary transition-all duration-1000" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
                 
             </div>
         </div>

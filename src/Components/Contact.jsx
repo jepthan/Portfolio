@@ -3,7 +3,7 @@ export default function Contact(props) {
 
     const {t} = useTranslation()
     return (
-        <div className='w-screen h-screen text-white' name={props.name}>
+        <div className=' text-col_text' name={props.name}>
             <h1 >{t('nav_contact')}</h1>
             <div >
                 Erat eos erat exerci dolor sed sea dolore clita esse nisl amet vel.

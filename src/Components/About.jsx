@@ -25,16 +25,16 @@ export default function About(props) {
                 <div className="ml-6 mr-6 w-96 grow">
                     <h1 className="text-center font-bold text-xl">My skills</h1>
                     <div className="flex flex-wrap mt-4">
-                        <div className="rounded bg-black px-4 py-2 mr-3 mb-3">
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
                             JavaScript
                         </div>
-                        <div className="rounded bg-black px-4 py-2 mr-3 mb-3">
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
                             HTML
                         </div>
-                        <div className="rounded bg-black px-4 py-2 mr-3 mb-3">
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
                             CSS
                         </div>
-                        <div className="rounded bg-black px-4 py-2 mr-3 mb-3">
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
                             C#
                         </div>
                     </div>
