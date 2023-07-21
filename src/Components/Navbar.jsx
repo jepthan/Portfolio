@@ -2,56 +2,39 @@ import { Link } from "react-scroll";
 import "./Navbar.css"
 import { useTranslation } from "react-i18next"
 import { useEffect, useRef, useState } from "react";
+import { document } from "postcss";
 
+import i18next from 'i18next'
 
 
 export default function Navbar() {
 
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isOpenLang, setIsOpenLang] = useState(false);
-  
+  const [currentlang, setcurrentLang] = useState(i18next.language)
 
-  const isOpenMenuReff = useRef(isOpenMenu);
-  const isOpenLangReff = useRef(isOpenLang);
-
-  const setIsOpenMenuState = data => {
-    isOpenMenuReff.current = data;
-    setIsOpenMenu(data);
-  };
-
-  const setIsOpenLangState = data => {
-    isOpenLangReff.current = data;
-    setIsOpenLang(data);
-  }
-
-  const menuref = useRef();
-  const langsel = useRef();
-
-  function handleClickOutside(event){
-    if (menuref.current && !menuref.current.contains(event.target)) {
-      if(isOpenMenuReff.current == true){
-        document.removeEventListener("click", handleClickOutside);
-      }
-      setIsOpenMenuState(!isOpenMenuReff.current)
-    }
-  }
-
-
-  function isOpenfun() {
-    setIsOpenMenu(!isOpenMenu)
-    if (!isOpenMenu) {
-      document.addEventListener("click", handleClickOutside)
+  function isOpenMenufun() {
+    setIsOpenMenu(!isOpenMenu);
+    if (isOpenLang) {
+      setIsOpenLang(false)
     }
 
   }
-
+  function isOpenLangfun(){
+    setIsOpenLang(!isOpenLang);
+    if(isOpenMenu){
+      setIsOpenMenu(false)
+    }
+  }
+  function changeLanguage(lang){
+    i18next.changeLanguage(lang)
+    setcurrentLang(i18next.language)
+  }
 
   const {t} = useTranslation()
-  
-
 
   return (
-    <nav className='w-full flex h-16 sticky top-0  z-40 align-middle backdrop-blur-lg  bg-zinc-800/60 shadow-lg'>
+    <nav className='w-full flex h-16 sticky top-0  z-40 align-middle backdrop-blur-lg  bg-secondary/90 shadow-lg'>
       <div className="mt-auto mb-auto flex grow">
         <img src="/logo.png" className="p-1 w-16 h-16"></img>
         <div className="text-lg text-white mb-auto mt-auto pl-2">JPH dev</div>
@@ -62,18 +45,27 @@ export default function Navbar() {
         <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />
       </ul>
 
-      <div className="flex mt-auto mb-auto" onClick={isOpenfun}>
+      <div className="flex mt-auto mb-auto" onClick={isOpenLangfun}>
         <div className="TranslateBtn icon"></div>
       </div>
 
-      <div className="flex mt-auto mb-auto md:hidden" onClick={isOpenfun}>
+      <div className="flex mt-auto mb-auto md:hidden" onClick={isOpenMenufun}>
         <div className="MenuBtn icon">
 
         </div>
       </div>
 
 
-      <ul ref={menuref} className={`absolute top-16 backdrop-blur-lg  bg-zinc-800/60 shadow-lg w-3/5 right-0 ${isOpenMenu ? "block" : "hidden"} md:hidden `}>
+      <ul className={`absolute top-16 backdrop-blur-lg z-40 bg-secondary/90 shadow-lg w-64 right-0 ${isOpenLang ? "block" : "hidden"}`}>
+        <li className={`NavItem ${currentlang == "es"? "active" : ""}`}>
+          <button onClick={() =>changeLanguage("es")}>Español</button>
+        </li>
+        <li className={`NavItem ${currentlang == "en"? "active" : ""}`}>
+          <button onClick={() =>changeLanguage("en")}>English</button>
+        </li>
+      </ul>
+
+      <ul className={`absolute top-16 backdrop-blur-lg z-40 bg-secondary/90 shadow-lg w-3/5 right-0 ${isOpenMenu ? "block" : "hidden"} md:hidden `}>
         <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
         <NavItem itemname={"About"} itemtext= {t('nav_about')} offset={-63} />
         <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />

@@ -40,14 +40,10 @@ export default function App() {
   return (
     <>
       <Suspense fallback={null}>
-        <button onClick={() => i18next.changeLanguage('es')}>Español</button>
-        <button onClick={() => i18next.changeLanguage('en')}>ingles</button>
+        
         <Navbar />
 
         <Home name="Home" />
-
-
-
 
 
         <About name="About" />
