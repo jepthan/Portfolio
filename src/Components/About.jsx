@@ -37,6 +37,21 @@ export default function About(props) {
                         <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
                             C#
                         </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            C++
+                        </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            react
+                        </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            git/github
+                        </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            Kotlin
+                        </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            Tailwind
+                        </div>
                     </div>
                 </div>
             </div>
