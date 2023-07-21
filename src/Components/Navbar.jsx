@@ -7,36 +7,44 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
 
-  const [isOpen, setIsOpen] = useState(false)
-
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isOpenLang, setIsOpenLang] = useState(false);
   
 
-  const isOpenReff = useRef(isOpen);
+  const isOpenMenuReff = useRef(isOpenMenu);
+  const isOpenLangReff = useRef(isOpenLang);
 
-  const setIsOpenState = data => {
-    isOpenReff.current = data;
-    setIsOpen(data);
+  const setIsOpenMenuState = data => {
+    isOpenMenuReff.current = data;
+    setIsOpenMenu(data);
   };
 
-  const menuref = useRef()
+  const setIsOpenLangState = data => {
+    isOpenLangReff.current = data;
+    setIsOpenLang(data);
+  }
+
+  const menuref = useRef();
+  const langsel = useRef();
 
   function handleClickOutside(event){
     if (menuref.current && !menuref.current.contains(event.target)) {
-      if(isOpenReff.current == true){
+      if(isOpenMenuReff.current == true){
         document.removeEventListener("click", handleClickOutside);
       }
-      setIsOpenState(!isOpenReff.current)
+      setIsOpenMenuState(!isOpenMenuReff.current)
     }
   }
 
 
   function isOpenfun() {
-    setIsOpen(!isOpen)
-    if (!isOpen) {
+    setIsOpenMenu(!isOpenMenu)
+    if (!isOpenMenu) {
       document.addEventListener("click", handleClickOutside)
     }
 
   }
+
 
   const {t} = useTranslation()
   
@@ -65,7 +73,7 @@ export default function Navbar() {
       </div>
 
 
-      <ul ref={menuref} className={`absolute top-16 backdrop-blur-lg  bg-zinc-800/60 shadow-lg w-3/5 right-0 ${isOpen ? "block" : "hidden"} md:hidden `}>
+      <ul ref={menuref} className={`absolute top-16 backdrop-blur-lg  bg-zinc-800/60 shadow-lg w-3/5 right-0 ${isOpenMenu ? "block" : "hidden"} md:hidden `}>
         <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
         <NavItem itemname={"About"} itemtext= {t('nav_about')} offset={-63} />
         <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />
