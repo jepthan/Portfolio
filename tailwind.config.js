@@ -13,6 +13,8 @@ export default {
       primary: '#519ee8',
       secondary: '#1c1c17',
       accent: '#c84687',
+      dark_grey: '#202020',
+
     },
     extend: {},
   },

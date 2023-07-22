@@ -1,5 +1,5 @@
-@tailwind base;
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans');
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,6 +8,7 @@
     height: 100%;
     margin:0px;
     font-family: 'Fira Sans', sans-serif;
-    @apply bg-background text-col_text
+    
+    @apply  bg-background text-col_text;
 }
 

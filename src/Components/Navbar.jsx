@@ -42,6 +42,7 @@ export default function Navbar() {
       <ul className="hidden md:flex mt-auto mb-auto">
         <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
         <NavItem itemname={"About"} itemtext= {t('nav_about')} offset={-65} />
+        <NavItem itemname={"Projects"} itemtext= {t('nav_Projects')} offset={-65} />
         <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />
       </ul>
 
@@ -68,6 +69,7 @@ export default function Navbar() {
       <ul className={`absolute top-16 backdrop-blur-lg z-40 bg-secondary/90 shadow-lg w-3/5 right-0 ${isOpenMenu ? "block" : "hidden"} md:hidden `}>
         <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
         <NavItem itemname={"About"} itemtext= {t('nav_about')} offset={-63} />
+        <NavItem itemname={"Projects"} itemtext= {t('nav_Projects')} offset={-65} />
         <NavItem itemname={"Contact"} itemtext= {t('nav_contact')} offset={-63} />
       </ul>
     </nav>
