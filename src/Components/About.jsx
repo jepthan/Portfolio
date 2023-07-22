@@ -1,33 +1,44 @@
-export default function About(props) {
+import { useTranslation } from "react-i18next"
 
+export default function About(props) {
+    const { t } = useTranslation()
 
     return (
-        <div className='w-screen h-[calc(100vh-65px)] text-white' name={props.name}>
-            <h1 >About</h1>
-            <div >
-                Erat eos erat exerci dolor sed sea dolore clita esse nisl amet vel.
-                Lorem et labore aliquyam invidunt esse diam erat justo nulla ea justo sed gubergren.
-                Nonumy molestie et te diam sed ipsum et et adipiscing duis diam. Stet ipsum justo amet
-                velit in esse lobortis eos takimata consectetuer vel. Lorem sit autem. Sed sit dolore
-                autem et delenit accusam tation sadipscing ut clita duo suscipit
-                praesent velit dolor. Dolores sed exerci praesent. Tempor sadipscing sit eos aliquyam
-                erat stet diam sadipscing ipsum sit dolore nisl duis vero. Aliquyam duo volutpat. Nihil
-                liber invidunt dolore vel no sea zzril consetetur dolore no et vulputate stet no eirmod.
-                Gubergren et dolor id volutpat dolore gubergren amet sadipscing rebum. Aliquyam erat stet
-                takimata amet eirmod consectetuer sit et dolore liber in eros dolore sit kasd sadipscing
-                aliquyam. Ipsum lorem ipsum. Et molestie delenit ea voluptua consetetur aliquyam esse nulla
-                amet wisi amet ea. Dolor diam invidunt stet eros justo no justo. Diam dolor no labore duo
-                velit et sadipscing dolor dolore imperdiet amet. Congue vel vero sanctus diam ipsum stet
-                aliquyam sadipscing invidunt dolore minim diam. Qui vero rebum ut iriure minim et eirmod
-                accusam ipsum dolor clita sit vel sit. Kasd ipsum rebum euismod dolor aliquip labore lorem
-                sed kasd gubergren et ut quis diam. Sed accusam tempor ea diam rebum est wisi et kasd. Vero
-                duis sed dolore sed sed voluptua voluptua nonummy dolores et est. Accusam consetetur sanctus
-                nonummy diam nonumy ipsum aliquyam no at labore eum volutpat invidunt clita dolor.
-                Nibh elitr invidunt eirmod ea ut sit vel eos nonumy sadipscing molestie. Ipsum magna
-                ut sit vel vel takimata sadipscing clita adipiscing sed dolore. Eirmod consetetur
-                elitr facilisis elitr. Sed et vulputate eirmod molestie. Et ipsum sanctus tempor
-                sea sit gubergren rebum consetetur sanctus ipsum diam ut feugait velit sed. Sit
-                kasd amet et duo justo sanctus commodo amet wisi eu takimata et vel sadipscing sed ut et.
+        <div className=' text-white' name={props.name}>
+            <h1 className="text-center text-3xl font-bold m-6">{t('about_header')}</h1>
+            <div className="text-center m-auto max-w-3xl">
+                {t("about_body")}
+            </div>
+            <div className="flex flex-wrap mt-14">
+                <div className="mr-6 ml-6 w-96 grow">
+                    <h1 className="text-center font-bold text-xl mb-4">Get to know me</h1>
+                    <p className="text-lg mb-3">
+                        {t("about_content1p1")}
+                    </p>
+                    <p className="text-lg mb-3">
+                        {t("about_content1p2")}
+                    </p>
+                    <p className="text-lg mb-3">
+                        {t("about_content1p3")}
+                    </p>
+                </div>
+                <div className="ml-6 mr-6 w-96 grow">
+                    <h1 className="text-center font-bold text-xl">My skills</h1>
+                    <div className="flex flex-wrap mt-4">
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            JavaScript
+                        </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            HTML
+                        </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            CSS
+                        </div>
+                        <div className="rounded bg-secondary px-4 py-2 mr-3 mb-3">
+                            C#
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

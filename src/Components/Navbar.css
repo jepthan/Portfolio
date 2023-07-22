@@ -3,18 +3,31 @@
 @tailwind utilities;
 
 .NavItem {
-    @apply text-lg text-white px-6 font-bold;
+    @apply text-lg text-col_text px-6 font-bold hover:text-primary transition duration-500 ease-out;
+
 }
 
 .NavItem .active {
-    @apply text-Blue rounded-md;
+    @apply text-primary rounded-md;
 }
 
-.colored {
-    background-color: white;
+.active {
+    @apply text-primary rounded-md;
+}
+
+.MenuBtn {
+    @apply bg-col_text;
     /* defines the background color of the image */
     mask: url("/menu_icon.svg") no-repeat center / contain;
     -webkit-mask: url("/menu_icon.svg") no-repeat center / contain;
+}
+
+.TranslateBtn {
+
+    @apply bg-col_text;
+    mask: url("/translate_icon.svg") no-repeat center / contain;
+    -webkit-mask: url("/translate_icon.svg") no-repeat center / contain;
+    mask-size: 30px;
 }
 
 .icon {

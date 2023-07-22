@@ -1,4 +1,5 @@
 import { useRef } from "react"
+import { useTranslation } from "react-i18next"
 
 export default function Home(props) {
 
@@ -10,14 +11,14 @@ export default function Home(props) {
         //console.log("AAAAAAAAAAAAA")
         e.target.style.flexGrow = "1"; 
     }
-
+    const {t} = useTranslation()
     
     return (
-        <div className="flex h-screen" name={props.name}>
-            <div className="flex-grow hover:bg-red transition-all" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
+        <div className="flex h-96 " name={props.name}>
+            <div className="flex-grow hover:bg-primary transition-all" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
                 
             </div>
-            <div className="flex-grow  hover:bg-red transition-all duration-1000" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
+            <div className="flex-grow  hover:bg-primary transition-all duration-1000" onMouseEnter={changegrowin} onMouseLeave={changegrowout}>
                 
             </div>
         </div>
