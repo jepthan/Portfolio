@@ -9,13 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^8.13.6",
+    "@types/three": "^0.154.0",
     "i18next": "^23.2.8",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-xhr-backend": "^3.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.1",
-    "react-scroll": "^1.8.9"
+    "react-scroll": "^1.8.9",
+    "three": "^0.155.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
