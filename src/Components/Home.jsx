@@ -130,29 +130,32 @@ export default function Home(props) {
 
     const { t } = useTranslation()
 
-    return (
-        <div className="static justify-center ">
+    const [isDesktop, setDesktop] = useState(window.innerWidth > 768);
 
-            <div className="md:absolute bottom-0 left-0 justify-center items-center max-h-[30rem] max-w-none md:max-h-[90rem] h-[85vh] md:max-w-[50%]" name={props.name}>
-                <h1 className="text-center text-5xl mt-36 mb-10 px-10">{t("home_title")}</h1>
+    const updateMedia = () => {
+        setDesktop(window.innerWidth > 768);
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", updateMedia);
+        return () => window.removeEventListener("resize", updateMedia);
+    });
+
+    return (
+        <div className=" justify-center ">
+
+            <div className=" max-h-[30rem] md:max-h-[90rem] md:max-w-[50%] md:absolute top-[25%] left-[8%]" name={props.name}>
+                <h1 className="text-center text-5xl mb-10 px-10 mt-14  md:mt-36 ">{t("home_title")}</h1>
                 <p className="text-center text-2xl mt-10 px-10">{t("home_description")}</p>
             </div>
             <div className="text-center h-[90vh]">
                 <Canvas
-                    camera={{ position: [8, 0, 0], fov: 80, filmOffset: -20}}
-                    shadows
+                    camera={{ position: [8, 0, 0], fov: 80, filmOffset: isDesktop ? -20 : 0 }}
                 >
-
                     <Scene />
-
-
                 </Canvas>
             </div>
 
         </div>
-
-
-
-
     )
 }
