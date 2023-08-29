@@ -8,6 +8,7 @@ import React, { Suspense } from 'react';
 import i18n from './i18n'
 import i18next from 'i18next'
 
+import Projectos from './Components/Projectos'
 
 
 
@@ -25,9 +26,10 @@ export default function App() {
           <About name="About" />
 
 
-
+          <Projectos name="Projects" />
 
           <Contact name="Contact" />
+
         </div>
 
 
