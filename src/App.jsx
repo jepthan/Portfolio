@@ -12,22 +12,24 @@ import i18next from 'i18next'
 
 
 export default function App() {
-  
+
   return (
     <>
       <Suspense fallback={null}>
-        
+
         <Navbar />
 
         <Home name="Home" />
 
-
-        <About name="About" />
-
-
+        <div className='flex items-center justify-center flex-wrap'>
+          <About name="About" />
 
 
-        <Contact name="Contact" />
+
+
+          <Contact name="Contact" />
+        </div>
+
 
 
       </Suspense>
