@@ -7,13 +7,11 @@ import './i18n'
 import React, { Suspense } from 'react';
 import i18n from './i18n'
 import i18next from 'i18next'
-
 import Projectos from './Components/Projectos'
 
 
-
 export default function App() {
-
+  
   return (
     <>
       <Suspense fallback={null}>

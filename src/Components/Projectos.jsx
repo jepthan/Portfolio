@@ -8,7 +8,7 @@ class projecto {
 }
 
 
-export default function Projectos() {
+export default function Projectos(props) {
 
     const projectos = [
         new projecto("Projecto 1", "Este es el primer projecto", "https://www.google.com","logo.png"),
@@ -16,8 +16,8 @@ export default function Projectos() {
         new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "logo.png")
     ]
     return (
-        <div className="w-full max-w-7xl">
-            <h1 className="text-center text-4xl">Projectos</h1>
+        <div className="w-full max-w-7xl" name={props.name}>
+            <h1 className="text-center text-4xl" >Projectos</h1>
             {projectos.map((projecto, index) => {
                 return (
                     <Project key={index} projecto={projecto} index={index}></Project>
@@ -33,7 +33,7 @@ function Project(props) {
 
     console.log(props.projecto)
     return (
-        <div className="w-full flex justify-center items-center my-4">
+        <div className="w-full flex justify-center items-center  flex-wrap md:flex-nowrap my-20">
 
             {renderOrder(props.index, props.projecto)}
 
@@ -61,16 +61,25 @@ function renderOrder(index, projecto) {
 
 function Imagen(props) {
     return (
-        <div className="w-96 h-96 bg-secondary rounded-lg mx-4">
-            <img className="w-full h-full" src={props.projecto.imagen}></img>
+        <div className="m-2 flex justify-center items-center">
+            <div className="relative">
+                <img className="relative" src="mac.png"/>
+                <img className="absolute bottom-1/2 right-[40%]" src={props.projecto.imagen}/>
+            </div>
+            
         </div>
     )
 }
 
 function ProjectInfo(props) {
     return (
-        <div className="grow h-96 bg-secondary rounded-lg mx-4">
-            {props.projecto.name}
-        </div>
+        <div className="grow h-80 m-2">
+            <h1 className="my-6 text-3xl">{props.projecto.name}</h1>
+            
+            <div className="my-3 text-lg">
+            texto que explica algo del proyecto aqui sigueria escribiendo para ver que tal se ve en la parte visual de la apliacacion
+            </div>
+            
+        </div>  
     )
 }
