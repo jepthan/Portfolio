@@ -142,9 +142,9 @@ export default function Home(props) {
     });
 
     return (
-        <div className=" justify-center ">
+        <div className=" justify-center " name={props.name}>
 
-            <div className=" max-h-[30rem] md:max-h-[90rem] md:max-w-[50%] md:absolute top-[25%] left-[8%]" name={props.name}>
+            <div className=" max-h-[30rem] md:max-h-[90rem] md:max-w-[50%] md:absolute top-[25%] left-[8%]" >
                 <h1 className="text-center text-5xl mb-10 px-10 mt-14  md:mt-36 ">{t("home_title")}</h1>
                 <p className="text-center text-2xl mt-10 px-10">{t("home_description")}</p>
             </div>

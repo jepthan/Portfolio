@@ -4,7 +4,7 @@ export default function About(props) {
     const { t } = useTranslation()
 
     return (
-        <div className='text-white shrink w-11/12 max-w-7xl' name={props.name}>
+        <div className='text-white shrink w-11/12 max-w-7xl mt-20' name={props.name}>
             <h1 className="text-center text-4xl font-extrabold mb-6">{t('about_header')}</h1>
             <div className="text-center m-auto max-w-7xl text-2xl">
                 {t("about_body")}
