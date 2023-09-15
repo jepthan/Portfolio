@@ -11,9 +11,9 @@ class projecto {
 export default function Projectos(props) {
 
     const projectos = [
-        new projecto("Projecto 1", "Este es el primer projecto", "https://www.google.com", "Projecto1.png"),
-        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "logo.png"),
-        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "logo.png")
+        new projecto("Portfolio", "Este es el primer projecto", "https://www.google.com", "Portfolio_Mac.svg"),
+        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "mac.png"),
+        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "mac.png")
     ]
     return (
         <div className="w-full max-w-7xl mt-20" name={props.name}>
@@ -47,7 +47,7 @@ function Imagen(props) {
     return (
         <div className="m-2 flex justify-center items-center max-w-2xl">
             <div className="relative ">
-                <img className="relative" src="mac.png" />
+                <img className="relative" src={props.projecto.imagen} />
 
             </div>
 
@@ -61,7 +61,7 @@ function ProjectInfo(props) {
             <h1 className="my-6 text-3xl">{props.projecto.name}</h1>
 
             <div className="my-3 text-lg">
-                texto que explica algo del proyecto aqui sigueria escribiendo para ver que tal se ve en la parte visual de la apliacacion
+                {props.projecto.description}
             </div>
 
             <a href={props.projecto.link} target="_blank">Ver en Github</a>
