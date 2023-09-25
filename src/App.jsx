@@ -29,6 +29,9 @@ export default function App() {
           <Contact name="Contact" />
 
         </div>
+        <footer className='bg-secondary'>
+
+        </footer>
 
 
 

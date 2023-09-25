@@ -12,7 +12,7 @@ export default function Projectos(props) {
 
     const projectos = [
         new projecto("Portfolio", "Este es el primer projecto", "https://www.google.com", "Portfolio_Mac.svg"),
-        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "SRS_MAC.png")
+        new projecto("System de Reserva de salas", "Un proyecto creado para el MOPT como parte del proceso educatiovo de la Universidad Nacional de Costa Rica(UNA)", "https://www.google.com", "SRS_MAC.svg")
     ]
     return (
         <div className="w-full max-w-7xl mt-20" name={props.name}>
