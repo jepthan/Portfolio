@@ -12,8 +12,7 @@ export default function Projectos(props) {
 
     const projectos = [
         new projecto("Portfolio", "Este es el primer projecto", "https://www.google.com", "Portfolio_Mac.svg"),
-        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "mac.png"),
-        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "mac.png")
+        new projecto("Projecto 2", "Este es el primer projecto", "https://www.google.com", "SRS_MAC.png")
     ]
     return (
         <div className="w-full max-w-7xl mt-20" name={props.name}>
