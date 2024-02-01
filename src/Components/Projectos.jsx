@@ -46,7 +46,7 @@ function Imagen(props) {
     return (
         <div className="m-2 flex justify-center items-center max-w-2xl">
             <div className="relative ">
-                <img className="relative" src={props.projecto.imagen} />
+                <img loading="lazy" className="relative" src={props.projecto.imagen} />
 
             </div>
 
