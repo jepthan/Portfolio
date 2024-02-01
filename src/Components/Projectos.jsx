@@ -1,29 +1,19 @@
-class projecto {
-    constructor(name, description, link, imagen) {
-        this.name = name
-        this.description = description
-        this.link = link
-        this.imagen = imagen
-    }
-}
+import { useTranslation } from "react-i18next"
+
+
 
 
 export default function Projectos(props) {
 
-    const projectos = [
-        new projecto("Portfolio", "The aim of this project is to design and develop a personal portfolio website that serves as a digital representation of my skills and personality. I want it to be aesthetically pleasing, user-friendly, and responsive across various devices and screen sizes.", "https://github.com/jepthan/Portfolio", "Portfolio_Mac.svg"),
-        new projecto("System de Reserva de salas", "Un proyecto creado para el MOPT como parte del proceso educatiovo de la Universidad Nacional de Costa Rica(UNA)", "", "SRS_MAC.svg")
-    ]
+    const {t} = useTranslation()
     return (
         <div className="w-full max-w-7xl mt-20" name={props.name}>
             <h1 className="text-center text-4xl" >Projectos</h1>
-            {projectos.map((projecto, index) => {
+            {t('projects', {returnObjects: true}).map((projecto, index) => {
                 return (
                     <Project key={index} projecto={projecto} index={index}></Project>
                 )
-            }
-            )}
-
+            })}
         </div>
     )
 }
@@ -46,7 +36,7 @@ function Imagen(props) {
     return (
         <div className="m-2 flex justify-center items-center max-w-2xl">
             <div className="relative ">
-                <img loading="lazy" className="relative" src={props.projecto.imagen} />
+                <img className="relative" src={props.projecto.image} />
 
             </div>
 
@@ -63,7 +53,7 @@ function ProjectInfo(props) {
                 {props.projecto.description}
             </div>
             {
-                props.projecto.link == "" ? 
+                props.projecto.link === "" ? 
                 <>
                 
                 </> 

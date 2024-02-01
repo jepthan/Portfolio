@@ -1,14 +1,26 @@
 {
     "top_bar_title": "Community Admin Panel",
-    "nav_home":"Home",
+    "nav_home": "Home",
     "nav_about": "About",
     "nav_contact": "Contact",
-    "nav_Projects":"Projects",
-    "home_title": "Hey, I'am Jefté Hidalgo",
+    "nav_Projects": "Projects",
+    "home_title": "Hey, I'm Jefté Hidalgo",
     "home_description": "I invite you to explore my portfolio",
     "about_header": "About Me",
     "about_body": "Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology ",
     "about_content1p1":"Hello I'm a dedicated and enthusiastic student in the field of computer science. I'm deeply passionate about problem-solving and creating practical solutions. Through my studies, I'm constantly expanding my knowledge and skills, driven by the desire to apply them to real-world projects.",
-    "about_content1p2":"I thrive on challenges and view them as opportunities for growth. Learning is a lifelong journey for me, and I actively seek out new concepts and technologies to enhance my abilities as a developer.",
-    "about_content1p3":"I'm open to job opportunities where I can contribute, learn, and grow. If you have an exciting opportunity that aligns with my skills and experience, I'd love to hear from you.Don't hesitate to reach out and let's discuss how we can work together to achieve great things.Thank you for visiting my portfolio, and I look forward to connecting with you!"
+    "projects": [
+        {
+            "name": "Portfolio",
+            "description": "The aim of this project is to design and develop a personal portfolio website that serves as a digital representation of my skills and personality. I want it to be aesthetically pleasing, user-friendly, and responsive across various devices and screen sizes.",
+            "link": "https://github.com/jepthan/Portfolio",
+            "image": "Portfolio_Mac.svg"
+        },
+        {
+            "name": "Room Reservation System",
+            "description": "A project created for the MOPT as part of the educational process at the National University of Costa Rica (UNA)",
+            "link": "",
+            "image": "SRS_MAC.svg"
+        }
+    ]
 }

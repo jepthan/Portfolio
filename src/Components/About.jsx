@@ -15,9 +15,7 @@ export default function About(props) {
                     <p className="text-lg mb-3">
                         {t("about_content1p1")}
                     </p>
-                    <p className="text-lg mb-3">
-                        {t("about_content1p2")}
-                    </p>
+                    
                     
                 </div>
                 <div className="ml-6 mr-6 w-96 grow">

@@ -1,11 +1,25 @@
 {
-    "top_bar_title": "Panel de administrador de comunidad",
-    "nav_home":"Inicio",
+    "top_bar_title": "Panel de Administración de la Comunidad",
+    "nav_home": "Inicio",
     "nav_about": "Acerca de",
     "nav_contact": "Contacto",
-    "nav_Projects":"Proyectos",
-    "home_title": "Hello, I'am Jefté Hidalgo",
-    "home_description": "I invite you to explore my portfolio",
-    "about_header": "About Me",
-    "about_body": "Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology "
+    "nav_projects": "Proyectos",
+    "home_title": "Hola, soy Jefté Hidalgo",
+    "home_description": "Te invito a explorar mi portafolio",
+    "about_header": "Sobre mí",
+    "about_body": "Aquí encontrarás más información sobre mí, lo que hago y mis habilidades actuales, principalmente en términos de programación y tecnología",
+    "projects": [
+        {
+            "name": "Portafolio",
+            "description": "El objetivo de este proyecto es diseñar y desarrollar un sitio web de portafolio personal que sirva como una representación digital de mis habilidades y personalidad. Quiero que sea estéticamente agradable, fácil de usar y receptivo en varios dispositivos y tamaños de pantalla.",
+            "link": "https://github.com/jepthan/Portfolio",
+            "image": "Portfolio_Mac.svg"
+        },
+        {
+            "name": "Sistema de Reserva de Salas",
+            "description": "Un proyecto creado para el MOPT como parte del proceso educativo de la Universidad Nacional de Costa Rica (UNA)",
+            "link": "",
+            "image": "SRS_MAC.svg"
+        }
+    ]
 }
