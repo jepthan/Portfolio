@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-import { ReactSVG } from 'react-svg'
+
 
 
 
@@ -34,11 +34,7 @@ function Imagen(props) {
     return (
         <div className="m-2 flex justify-center items-center max-w-2xl">
             <div className="relative">
-                <ReactSVG src={props.projecto.image} className="relative has-[svg]:w-fit h-fit" afterInjection={(svg)=>{
-                    console.log("After injection")
-                    svg.classList.add("h-fit")
-                    svg.classList.add("w-fit")
-                }}/>
+                <img className="rounded-lg" src={props.projecto.image} alt={props.projecto.name} />
             </div>
 
         </div>
