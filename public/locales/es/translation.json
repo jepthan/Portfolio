@@ -13,13 +13,15 @@
             "name": "Portafolio",
             "description": "El objetivo de este proyecto es diseñar y desarrollar un sitio web de portafolio personal que sirva como una representación digital de mis habilidades y personalidad. Quiero que sea estéticamente agradable, fácil de usar y receptivo en varios dispositivos y tamaños de pantalla.",
             "link": "https://github.com/jepthan/Portfolio",
-            "image": "Portfolio_Mac.svg"
+            "image": "Portfolio_Mac.svg",
+            "btn": "Ver en GitHub"
         },
         {
             "name": "Sistema de Reserva de Salas",
             "description": "Un proyecto creado para el MOPT como parte del proceso educativo de la Universidad Nacional de Costa Rica (UNA)",
             "link": "",
-            "image": "SRS_MAC.svg"
+            "image": "SRS_MAC.svg",
+            "btn": ""
         }
     ]
 }

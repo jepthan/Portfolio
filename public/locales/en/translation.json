@@ -14,13 +14,22 @@
             "name": "Portfolio",
             "description": "The aim of this project is to design and develop a personal portfolio website that serves as a digital representation of my skills and personality. I want it to be aesthetically pleasing, user-friendly, and responsive across various devices and screen sizes.",
             "link": "https://github.com/jepthan/Portfolio",
-            "image": "Portfolio_Mac.svg"
+            "image": "Portfolio_Mac.svg",
+            "btn": "View In Github"
         },
         {
             "name": "Room Reservation System",
             "description": "A project created for the MOPT as part of the educational process at the National University of Costa Rica (UNA)",
             "link": "",
-            "image": "SRS_MAC.svg"
+            "image": "SRS_MAC.svg",
+            "btn": ""
+        },{
+            "name": "Coming Soon",
+            "description": "Coming Soon",
+            "link": "",
+            "image": "SRS_MAC.svg",
+            "btn": ""
         }
+
     ]
 }

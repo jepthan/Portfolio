@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next"
-
+import { ReactSVG } from 'react-svg'
 
 
 
@@ -19,8 +19,6 @@ export default function Projectos(props) {
 }
 
 function Project(props) {
-
-    console.log(props.projecto)
     return (
         <div className="w-full justify-center items-center flex flex-wrap md:grid md:grid-cols-2 md:flex-nowrap my-20">
 
@@ -35,9 +33,12 @@ function Project(props) {
 function Imagen(props) {
     return (
         <div className="m-2 flex justify-center items-center max-w-2xl">
-            <div className="relative ">
-                <img className="relative" src={props.projecto.image} />
-
+            <div className="relative">
+                <ReactSVG src={props.projecto.image} className="relative has-[svg]:w-fit h-fit" afterInjection={(svg)=>{
+                    console.log("After injection")
+                    svg.classList.add("h-fit")
+                    svg.classList.add("w-fit")
+                }}/>
             </div>
 
         </div>
@@ -59,7 +60,7 @@ function ProjectInfo(props) {
                 </> 
                 :
                 <>
-                <a className="bg-primary rounded-md text-col_text p-2 hover:bg-accent ease-in duration-200" href={props.projecto.link} target="_blank">Ver en Github</a>
+                <a className="bg-primary rounded-md text-col_text p-2 hover:bg-accent ease-in duration-200" href={props.projecto.link} target="_blank">{props.projecto.btn}</a>
                 </>
             }
             
