@@ -34,7 +34,7 @@ function Imagen(props) {
     return (
         <div className="m-2 flex justify-center items-center max-w-2xl">
             <div className="relative">
-                <img className="rounded-lg" src={props.projecto.image} alt={props.projecto.name} />
+                <img src={props.projecto.image} alt={props.projecto.name} />
             </div>
 
         </div>
