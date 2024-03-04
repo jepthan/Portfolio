@@ -18,6 +18,7 @@ export default function Navbar() {
     if (isOpenLang) {
       setIsOpenLang(false)
     }
+    
 
   }
   function isOpenLangfun(){
@@ -27,8 +28,12 @@ export default function Navbar() {
     }
   }
   function changeLanguage(lang){
-    i18next.changeLanguage(lang)
-    setcurrentLang(i18next.language)
+    if(isOpenLang){
+      i18next.changeLanguage(lang)
+      setcurrentLang(i18next.language)
+      setIsOpenLang(false)
+    }
+    
   }
 
   const {t} = useTranslation()
@@ -57,16 +62,16 @@ export default function Navbar() {
       </div>
 
 
-      <ul className={`absolute top-16 backdrop-blur-lg z-40 bg-secondary/90 shadow-lg w-64 right-0 ${isOpenLang ? "block" : "hidden"}`}>
-        <li className={`NavItem ${currentlang == "es"? "active" : ""}`}>
+      <ul className={`absolute top-16 backdrop-blur-lg z-40 bg-secondary/90 shadow-lg w-64 right-0 transition-opacity duration-300  ${isOpenLang ? "opacity-100" : "opacity-0"}`}>
+        <li className="NavItem">
           <button onClick={() =>changeLanguage("es")}>Español</button>
         </li>
-        <li className={`NavItem ${currentlang == "en"? "active" : ""}`}>
+        <li className="NavItem">
           <button onClick={() =>changeLanguage("en")}>English</button>
         </li>
       </ul>
 
-      <ul className={`absolute top-16 backdrop-blur-lg z-40 bg-secondary/90 shadow-lg w-3/5 right-0 ${isOpenMenu ? "block" : "hidden"} md:hidden `}>
+      <ul className={`absolute top-16 backdrop-blur-lg z-40 bg-secondary/90 shadow-lg w-3/5 right-0 transition-opacity duration-300 ${isOpenMenu ? "opacity-100" : "opacity-0"} md:hidden `}>
         <NavItem itemname={"Home"} itemtext= {t('nav_home')} offset={-65} />
         <NavItem itemname={"About"} itemtext= {t('nav_about')} offset={-63} />
         <NavItem itemname={"Projects"} itemtext= {t('nav_Projects')} offset={-65} />

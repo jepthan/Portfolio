@@ -7,13 +7,7 @@
 
 }
 
-.NavItem .active {
-    @apply text-primary rounded-md;
-}
 
-.active {
-    @apply text-primary rounded-md;
-}
 
 .MenuBtn {
     @apply bg-col_text;
