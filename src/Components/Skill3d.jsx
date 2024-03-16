@@ -1,11 +1,13 @@
 import React from 'react';
-import { useState } from 'react';
-import { Text, Billboard, Html } from "@react-three/drei";
+import { useState, useRef } from 'react';
+import { Text, Billboard, Html, Octahedron } from "@react-three/drei";
 import { Flex, Box } from '@react-three/flex';
+import { useFrame } from '@react-three/fiber'
+import { randFloat } from 'three/src/math/MathUtils';
 
 export default function Skill3d(props) {
 
-   
+
     return (
         <group>
             <Billboard>
@@ -21,8 +23,8 @@ export default function Skill3d(props) {
             </Billboard>
 
             <Flex
-            
-             size={[5, 6.7, 10]} flexWrap="wrap-reverse" flexDirection="column" plane="yz" position={[-2, -0.9, 2.5]} visible={props.visible}>
+
+                size={[5, 6.7, 10]} flexWrap="wrap-reverse" flexDirection="column" plane="yz" position={[-2, -0.9, 2.5]} visible={props.visible}>
 
                 <SkillBox text="React" />
 
@@ -49,14 +51,23 @@ export default function Skill3d(props) {
 }
 
 function SkillBox(props) {
+    const mesh = useRef();
+
+    useFrame((state, delta) => {
+        let value = randFloat(0.3, 1);
+        mesh.current.rotation.y += delta * value;
+        mesh.current.rotation.x += delta * value;
+    });
     return (
         <Box padding={1.3}>
             <Flex justifyContent="center" alignItems="center" >
 
                 <Box centerAnchor>
                     <mesh>
-                        <icosahedronGeometry />
-                        <meshPhongMaterial color={'#FFFFFF'} wireframe={false} size={0.1} flatShading={true} />
+                        <Octahedron args={[0.5, 0]} ref={mesh} >
+                            <meshPhongMaterial color={'#FFFFFF'} wireframe={false} size={0.1} flatShading={true} />
+                        </Octahedron>
+
 
                     </mesh>
                 </Box>
