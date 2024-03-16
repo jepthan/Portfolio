@@ -130,7 +130,7 @@ function ParticleContainer(props) {
             position={[0, 0, 0]}
             ref={meshRef}
         >
-            {Array(150).fill().map((_, i) => (<Particle />))}
+            {Array(150).fill().map((_, i) => (<Particle key={i} />))}
         </group>
     )
 }

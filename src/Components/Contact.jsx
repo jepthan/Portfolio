@@ -57,7 +57,7 @@ export default function Contact(props) {
                 <h1 className=" text-center text-4xl mb-4">{t('nav_contact')}</h1>
                 <p className=" text-center mb-6 text-2xl"> Feel free to Contact me by submitting the form below and I will get back to you as soon as possible </p>
            
-            <form className="grid mx-7 text-dark_grey bg-secondary px-6 py-6 rounded-lg" onChange={handlechange} onSubmit={handlesend}>
+            <form className="grid text-dark_grey bg-secondary px-6 py-6 rounded-lg" onChange={handlechange} onSubmit={handlesend}>
 
                 <label className="w-full" htmlFor="name">Name</label>
                 <input value={form.name} className="px-2 py-3 rounded-lg" type="text" id="name" name="name" placeholder="Enter Your Name.." />
