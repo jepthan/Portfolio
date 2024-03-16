@@ -1,7 +1,14 @@
-import { useHelper } from "@react-three/drei";
+import {Html } from "@react-three/drei";
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas, events, useFrame } from '@react-three/fiber'
-import { DirectionalLightHelper, IcosahedronGeometry, SpotLight } from "three"
+import Skill3d from './Skill3d'
+
+
+
+//lerp function for every one
+const lerp = (start, end, alpha) => {
+    return start * (1 - alpha) + end * alpha
+}
 
 function Particle(props) {
 
@@ -36,9 +43,7 @@ function OuterShape(props) {
     const meshRef = useRef()
     const [targetScale, setTargetScale] = useState(1.4);
     // Set up state for the hovered and active state
-    const lerp = (start, end, alpha) => {
-        return start * (1 - alpha) + end * alpha
-    }
+
 
     useFrame((state, delta) => {
         //make mesh rotate towards the state.mouse.x
@@ -55,9 +60,11 @@ function OuterShape(props) {
             scale={1.2}
             onPointerEnter={(e) => {
                 setTargetScale(3.5);
+                props.controllInner(0);
             }}
             onPointerLeave={(e) => {
                 setTargetScale(1.4);
+                props.controllInner(1);
             }}
 
             rotation={[1, 1, 1]}
@@ -75,21 +82,24 @@ function InnerShape(props) {
     // Set up state for the hovered and active state
     const [active, setActive] = useState(false)
 
+
     useFrame((state, delta) => {
         meshRef.current.rotation.y += delta * props.rotationspeed;
         meshRef.current.rotation.x += delta * props.rotationspeed;
+        //console.log(meshRef.current.material.opacity)
+        meshRef.current.material.opacity = lerp(meshRef.current.material.opacity, props.opacity, 0.15)
     })
     // Return view, these are regular three.js elements expressed in JSX
     return (
         <mesh
             {...props}
             ref={meshRef}
-            scale={1.5}
+            scale={1.2}
             onClick={(event) => setActive(!active)}
             rotation={[1, 1, 1]}
         >
             <icosahedronGeometry args={[1, 1]} />
-            <meshPhongMaterial color={'#FFFFFF'} wireframe={false} size={0.1} flatShading={true} />
+            <meshPhongMaterial color={'#FFFFFF'} wireframe={false} size={0.1} flatShading={true} transparent />
         </mesh>
     )
 }
@@ -120,7 +130,7 @@ function Scene(props) {
     //useHelper(light1, DirectionalLightHelper, 1, 'red');
     //useHelper(light2, DirectionalLightHelper, 1, 'blue');
     //useHelper(light3, DirectionalLightHelper, 1, 'white');
-
+    const [InnerShapeVis, setInnerShapeVis] = useState(1);
 
     return (
         <scene>
@@ -128,13 +138,32 @@ function Scene(props) {
             <directionalLight lookAt={[0, 0, 0]} position={[2, -1, 2]} color={'#FF3367'} intensity={1} ref={light1} />
             <directionalLight lookAt={[0, 0, 0]} position={[2, 2, -2]} color={'#8200C9'} intensity={2} ref={light2} />
             <directionalLight lookAt={[0, 0, 0]} position={[3, -5, -5]} color={'#FFFFFF'} intensity={2} ref={light3} />
-            <InnerShape position={[0, 0, 0]} rotationspeed={0.2} />
-            <OuterShape position={[0, 0, 0]} rotationspeed={0.13} />
+            <InnerShape position={[0, 0, 0]} rotationspeed={0.2} opacity={InnerShapeVis} />
+            <OuterShape position={[0, 0, 0]} rotationspeed={0.13} controllInner={setInnerShapeVis} />
             <ParticleContainer position={[0, 0, 0]} rotationspeed={0.1} />
+            <group>
+                <Html
+
+
+                    position={[0, 3.6, 2]}
+
+                >
+                    <div className="bold text-4xl p-3 rounded-full w-60" onClick={() => console.log('.')}>
+                        My Skills
+                    </div>
+                </Html>
+                <Skill3d/>
+
+            </group>
+
+
+
+
         </scene>
 
     )
 }
+
 export default function Home3dRender(props) {
 
     const [isDesktop, setDesktop] = useState(window.innerWidth > 768);
@@ -152,12 +181,12 @@ export default function Home3dRender(props) {
         <div className="text-center h-[90vh]">
 
             <Canvas
+
                 camera={{ position: [8, 0, 0], fov: 80, filmOffset: isDesktop ? -20 : 0 }}
             >
                 <Suspense fallback={null}>
                     <Scene />
                 </Suspense>
-
 
             </Canvas>
 

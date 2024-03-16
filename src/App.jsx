@@ -8,13 +8,13 @@ import React, { Suspense } from 'react';
 import i18n from './i18n'
 import i18next from 'i18next'
 import Projectos from './Components/Projectos'
-
+import Loading from './Components/Loading'
 
 export default function App() {
   
   return (
     <>
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loading/>}>
 
         <Navbar />
 
