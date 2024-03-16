@@ -1,4 +1,4 @@
-import {Html } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import React, { Suspense, useEffect, useRef, useState } from 'react'
 import { Canvas, events, useFrame } from '@react-three/fiber'
 import Skill3d from './Skill3d'
@@ -52,6 +52,7 @@ function OuterShape(props) {
         let alpha = 0.04;
         meshRef.current.scale.set(lerp(meshRef.current.scale.x, targetScale, alpha), lerp(meshRef.current.scale.y, targetScale, alpha), lerp(meshRef.current.scale.z, targetScale, alpha));
     })
+    const [active, setActive] = useState(false)
     // Return view, these are regular three.js elements expressed in JSX
     return (
         <mesh
@@ -65,6 +66,17 @@ function OuterShape(props) {
             onPointerLeave={(e) => {
                 setTargetScale(1.4);
                 props.controllInner(1);
+            }}
+            onClick={(e) => {
+                if(active){
+                    setTargetScale(1.4);
+                    props.controllInner(1);
+                }
+                else{
+                    setTargetScale(3.5);
+                    props.controllInner(0);
+                }
+                setActive(!active);
             }}
 
             rotation={[1, 1, 1]}
@@ -141,20 +153,11 @@ function Scene(props) {
             <InnerShape position={[0, 0, 0]} rotationspeed={0.2} opacity={InnerShapeVis} />
             <OuterShape position={[0, 0, 0]} rotationspeed={0.13} controllInner={setInnerShapeVis} />
             <ParticleContainer position={[0, 0, 0]} rotationspeed={0.1} />
-            <group>
-                <Html
 
 
-                    position={[0, 3.6, 2]}
+            <Skill3d visible={InnerShapeVis>0.1? false: true}/>
 
-                >
-                    <div className="bold text-4xl p-3 rounded-full w-60" onClick={() => console.log('.')}>
-                        My Skills
-                    </div>
-                </Html>
-                <Skill3d/>
 
-            </group>
 
 
 
